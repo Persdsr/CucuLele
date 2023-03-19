@@ -25,14 +25,14 @@ def get_meme():
                 if i['type'] == 'z':
                     all_items.append({
                         'url': i['url'],
-                        'text': d['text']
+                        #'text': d['text']
                     })
         except:
             continue
 
     a = randint(0, len(all_items))
     meme = all_items[a]
-    return meme
+    return meme['url']
 
 
 get_meme()

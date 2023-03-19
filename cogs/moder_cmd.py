@@ -7,7 +7,7 @@ class ModerCMD(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    @commands.has_permissions(administrator=True)
+    @commands.has_permissions()
     async def c(self, ctx, amount=0):
         if amount == 0:
             await ctx.channel.purge()
@@ -21,7 +21,7 @@ class ModerCMD(commands.Cog):
             file.write(f'{word}\n\n')
 
     @commands.command()
-    @commands.has_permissions(kick_members=True, administrator=True)
+    @commands.has_permissions()
     async def kick(self, ctx, member: disnake.Member, *, reason='Нарушение правил'):
         await member.kick(reason=reason)
 
